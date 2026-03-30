@@ -1,0 +1,134 @@
+2026-03-29 15:07:07,508 - INFO - --- Starting Daily Public Health Data Pipeline ---
+2026-03-29 15:07:07,509 - INFO - Phase: INGEST
+2026-03-29 15:07:07,509 - INFO - Starting download from https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv
+2026-03-29 15:08:02,334 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\ingest.py:49: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  today_str = datetime.utcnow().strftime('%Y-%m-%d')
+
+2026-03-29 15:08:02,449 - INFO - Successfully downloaded raw data to ..\data/raw/owid_2026-03-29.csv
+2026-03-29 15:08:02,457 - INFO - Phase: CLEAN
+2026-03-29 15:08:02,457 - INFO - Loading raw data from ..\data/raw/owid_2026-03-29.csv
+2026-03-29 15:08:04,933 - INFO - Initial row count: 429435
+2026-03-29 15:08:05,239 - INFO - Cleaned data. Rows dropped: 7770. Final count: 421665
+2026-03-29 15:08:05,240 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\clean.py:77: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  date_str = datetime.utcnow().strftime('%Y-%m-%d')
+
+2026-03-29 15:08:06,617 - INFO - Saved cleaned data to ..\data/cleaned/cleaned_2026-03-29.csv
+2026-03-29 15:08:06,621 - INFO - Phase: VALIDATE
+2026-03-29 15:08:06,621 - INFO - Starting validation for ..\data/cleaned/cleaned_2026-03-29.csv
+2026-03-29 15:08:06,624 - INFO - Could not find local file-backed GX project
+2026-03-29 15:08:06,627 - INFO - Created temporary directory 'C:\Users\rayan\AppData\Local\Temp\tmpb_jmnn4w' for ephemeral docs site
+2026-03-29 15:08:06,629 - INFO - Loading 'datasources' ->
+[]
+2026-03-29 15:08:06,648 - ERROR - Error during validation: Data Docs Site `local_site` already exists in the Data Context.
+2026-03-29 15:08:06,649 - ERROR - Validation failed. Halting pipeline execution.
+2026-03-29 15:43:16,385 - INFO - --- Starting Daily Public Health Data Pipeline ---
+2026-03-29 15:43:16,386 - INFO - Phase: INGEST
+2026-03-29 15:43:16,386 - INFO - Starting download from https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv
+2026-03-29 15:44:35,260 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\ingest.py:49: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  today_str = datetime.utcnow().strftime('%Y-%m-%d')
+
+2026-03-29 15:44:35,462 - INFO - Successfully downloaded raw data to ..\data/raw/owid_2026-03-29.csv
+2026-03-29 15:44:35,472 - INFO - Phase: CLEAN
+2026-03-29 15:44:35,472 - INFO - Loading raw data from ..\data/raw/owid_2026-03-29.csv
+2026-03-29 15:44:37,905 - INFO - Initial row count: 429435
+2026-03-29 15:44:38,209 - INFO - Cleaned data. Rows dropped: 7770. Final count: 421665
+2026-03-29 15:44:38,283 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\clean.py:77: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  date_str = datetime.utcnow().strftime('%Y-%m-%d')
+
+2026-03-29 15:44:39,886 - INFO - Saved cleaned data to ..\data/cleaned/cleaned_2026-03-29.csv
+2026-03-29 15:44:39,891 - INFO - Phase: VALIDATE
+2026-03-29 15:44:39,891 - INFO - Starting validation for ..\data/cleaned/cleaned_2026-03-29.csv
+2026-03-29 15:44:39,902 - INFO - Could not find local file-backed GX project
+2026-03-29 15:44:39,904 - INFO - Created temporary directory 'C:\Users\rayan\AppData\Local\Temp\tmpdqozb2vx' for ephemeral docs site
+2026-03-29 15:44:39,907 - INFO - Loading 'datasources' ->
+[]
+2026-03-29 15:44:39,925 - ERROR - Error during validation: Data Docs Site `local_site` already exists in the Data Context.
+2026-03-29 15:44:39,925 - ERROR - Validation failed. Halting pipeline execution.
+2026-03-29 16:06:23,818 - INFO - --- Starting Universal Auto-ETL Pipeline ---
+2026-03-29 16:06:23,819 - INFO - Phase: CLEAN (Dynamic)
+2026-03-29 16:06:23,819 - INFO - Loading raw data from ..\data\raw\custom_upload.csv
+2026-03-29 16:06:27,314 - INFO - Cleaned generic data. Dropped 0 empty rows.
+2026-03-29 16:06:48,089 - INFO - Phase: VALIDATE (Dynamic)
+2026-03-29 16:06:48,093 - INFO - Could not find local file-backed GX project
+2026-03-29 16:06:48,095 - INFO - Created temporary directory 'C:\Users\rayan\AppData\Local\Temp\tmpxqk07jta' for ephemeral docs site
+2026-03-29 16:06:48,097 - INFO - Loading 'datasources' ->
+[]
+2026-03-29 16:06:51,907 - WARNING - C:\Users\rayan\Desktop\projet data\project\venv\Lib\site-packages\great_expectations\expectations\expectation.py:1515: UserWarning: `result_format` configured at the Validator-level will not be persisted. Please add the configuration to your Checkpoint config or checkpoint_run() method instead.
+  warnings.warn(
+
+2026-03-29 16:06:51,923 - INFO - 	1 expectation(s) included in expectation_suite.
+2026-03-29 16:06:55,682 - INFO - 	1 expectation(s) included in expectation_suite.
+2026-03-29 16:06:55,693 - INFO - Dynamic GE Validation PASSED.
+2026-03-29 16:06:55,694 - INFO - Phase: AGGREGATE (Dynamic)
+2026-03-29 16:06:55,695 - INFO - Dynamically grouping features...
+2026-03-29 16:06:58,675 - INFO - Auto-selected iso_code as primary indexing entity.
+2026-03-29 16:06:58,795 - INFO - Dumped aggregated custom schema to ..\data\curated\aggregated_dynamic_data.csv
+2026-03-29 16:06:58,821 - INFO - Phase: REPORT (Pass Through)
+2026-03-29 16:06:58,836 - INFO - Dynamic final report synced effectively at ..\data\curated\final_report.csv
+2026-03-29 16:06:58,837 - INFO - --- Pipeline Completed Automatically Outputting to ..\data\curated\final_report.csv in 35.02 seconds ---
+2026-03-29 16:14:31,194 - INFO - --- Starting Universal Auto-ETL Pipeline ---
+2026-03-29 16:14:31,194 - INFO - Phase: CLEAN (Dynamic)
+2026-03-29 16:14:31,195 - INFO - Loading raw data from ..\data\raw\custom_upload.csv
+2026-03-29 16:14:34,896 - INFO - Cleaned generic data. Dropped 0 empty rows.
+2026-03-29 16:14:50,543 - INFO - --- Starting Universal Auto-ETL Pipeline ---
+2026-03-29 16:14:50,543 - INFO - Phase: CLEAN (Dynamic)
+2026-03-29 16:14:50,543 - INFO - Loading raw data from ..\data\raw\custom_upload.csv
+2026-03-29 16:14:53,958 - INFO - Cleaned generic data. Dropped 0 empty rows.
+2026-03-29 16:14:57,486 - INFO - Phase: VALIDATE (Dynamic)
+2026-03-29 16:14:57,491 - INFO - Could not find local file-backed GX project
+2026-03-29 16:14:57,494 - INFO - Created temporary directory 'C:\Users\rayan\AppData\Local\Temp\tmpsgm87zsr' for ephemeral docs site
+2026-03-29 16:14:57,496 - INFO - Loading 'datasources' ->
+[]
+2026-03-29 16:15:02,841 - WARNING - C:\Users\rayan\Desktop\projet data\project\venv\Lib\site-packages\great_expectations\expectations\expectation.py:1515: UserWarning: `result_format` configured at the Validator-level will not be persisted. Please add the configuration to your Checkpoint config or checkpoint_run() method instead.
+  warnings.warn(
+
+2026-03-29 16:15:02,851 - INFO - 	1 expectation(s) included in expectation_suite.
+2026-03-29 16:15:05,613 - INFO - 	1 expectation(s) included in expectation_suite.
+2026-03-29 16:15:05,622 - INFO - Dynamic GE Validation PASSED.
+2026-03-29 16:15:05,623 - INFO - Phase: AGGREGATE (Dynamic Dual-Axis)
+2026-03-29 16:15:05,623 - INFO - Dynamically grouping features for time-series and entities...
+2026-03-29 16:15:08,372 - INFO - Auto-selected iso_code as primary Entity.
+2026-03-29 16:15:08,458 - INFO - Auto-selected date as primary Time-Series index.
+2026-03-29 16:15:08,900 - INFO - Phase: REPORT (Dual Mapping)
+2026-03-29 16:15:08,918 - INFO - Dynamic final reports synced effectively in Custom Maps.
+2026-03-29 16:15:08,918 - INFO - --- Pipeline Completed Automatically Outputting Multi-Dimensional BI logic in 37.72 seconds ---
+2026-03-29 16:15:16,284 - INFO - Phase: VALIDATE (Dynamic)
+2026-03-29 16:15:16,292 - INFO - Could not find local file-backed GX project
+2026-03-29 16:15:16,294 - INFO - Created temporary directory 'C:\Users\rayan\AppData\Local\Temp\tmp2vvk5hrb' for ephemeral docs site
+2026-03-29 16:15:16,297 - INFO - Loading 'datasources' ->
+[]
+2026-03-29 16:15:19,845 - WARNING - C:\Users\rayan\Desktop\projet data\project\venv\Lib\site-packages\great_expectations\expectations\expectation.py:1515: UserWarning: `result_format` configured at the Validator-level will not be persisted. Please add the configuration to your Checkpoint config or checkpoint_run() method instead.
+  warnings.warn(
+
+2026-03-29 16:15:19,857 - INFO - 	1 expectation(s) included in expectation_suite.
+2026-03-29 16:15:23,453 - INFO - 	1 expectation(s) included in expectation_suite.
+2026-03-29 16:15:23,466 - INFO - Dynamic GE Validation PASSED.
+2026-03-29 16:15:23,466 - INFO - Phase: AGGREGATE (Dynamic Dual-Axis)
+2026-03-29 16:15:23,467 - INFO - Dynamically grouping features for time-series and entities...
+2026-03-29 16:15:26,759 - INFO - Auto-selected iso_code as primary Entity.
+2026-03-29 16:15:26,905 - INFO - Auto-selected date as primary Time-Series index.
+2026-03-29 16:15:27,624 - INFO - Phase: REPORT (Dual Mapping)
+2026-03-29 16:15:27,642 - INFO - Dynamic final reports synced effectively in Custom Maps.
+2026-03-29 16:15:27,643 - INFO - --- Pipeline Completed Automatically Outputting Multi-Dimensional BI logic in 37.10 seconds ---
+2026-03-29 16:16:55,473 - INFO - --- Starting Universal Auto-ETL Pipeline ---
+2026-03-29 16:16:55,473 - INFO - Phase: CLEAN (Dynamic)
+2026-03-29 16:16:55,474 - INFO - Loading raw data from ..\data\raw\custom_upload.csv
+2026-03-29 16:16:58,585 - INFO - Cleaned generic data. Dropped 0 empty rows.
+2026-03-29 16:17:20,519 - INFO - Phase: VALIDATE (Dynamic)
+2026-03-29 16:17:20,525 - INFO - Could not find local file-backed GX project
+2026-03-29 16:17:20,528 - INFO - Created temporary directory 'C:\Users\rayan\AppData\Local\Temp\tmp9rdme25c' for ephemeral docs site
+2026-03-29 16:17:20,530 - INFO - Loading 'datasources' ->
+[]
+2026-03-29 16:17:24,145 - WARNING - C:\Users\rayan\Desktop\projet data\project\venv\Lib\site-packages\great_expectations\expectations\expectation.py:1515: UserWarning: `result_format` configured at the Validator-level will not be persisted. Please add the configuration to your Checkpoint config or checkpoint_run() method instead.
+  warnings.warn(
+
+2026-03-29 16:17:24,158 - INFO - 	1 expectation(s) included in expectation_suite.
+2026-03-29 16:17:27,706 - INFO - 	1 expectation(s) included in expectation_suite.
+2026-03-29 16:17:27,716 - INFO - Dynamic GE Validation PASSED.
+2026-03-29 16:17:27,718 - INFO - Phase: AGGREGATE (Dynamic Dual-Axis)
+2026-03-29 16:17:27,718 - INFO - Dynamically grouping features for time-series and entities...
+2026-03-29 16:17:30,770 - INFO - Auto-selected iso_code as primary Entity.
+2026-03-29 16:17:30,874 - INFO - Auto-selected date as primary Time-Series index.
+2026-03-29 16:17:31,519 - INFO - Phase: REPORT (Dual Mapping)
+2026-03-29 16:17:31,539 - INFO - Dynamic final reports synced effectively in Custom Maps.
+2026-03-29 16:17:31,539 - INFO - --- Pipeline Completed Automatically Outputting Multi-Dimensional BI logic in 36.07 seconds ---

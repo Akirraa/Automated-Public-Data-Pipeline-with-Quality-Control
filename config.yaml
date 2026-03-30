@@ -1,0 +1,15 @@
+pipeline:
+  dataset_url: "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv"
+  schedule_time_utc: "02:00"
+
+paths:
+  raw_dir: "data/raw/"
+  cleaned_dir: "data/cleaned/"
+  curated_dir: "data/curated/"
+  log_dir: "logs/"
+  expectations_dir: "expectations/"
+
+thresholds:
+  max_missing_pct: 0.05
+  lookback_days: 7
+  top_n_countries: 20
