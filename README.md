@@ -47,3 +47,11 @@ A multi-stage Dockerfile is included to containerize and serve both the Python b
    docker run -d -p 8000:8000 -p 5173:5173 --name etl-dashboard auto-etl-platform
 
 3. Access the deployed application bounds remotely via port 5173 or locally at http://localhost:5173.
+
+## Power BI Integration
+
+The platform provides a direct sync endpoint for Power BI:
+1. In Power BI Desktop, go to **Get Data** -> **Web**.
+2. Paste the following URL: `http://localhost:8000/api/pbi` (or click the Link icon in the dashboard header).
+3. Power BI will automatically detect the schema and allow you to build custom reports that update whenever the ETL pipeline runs.
+

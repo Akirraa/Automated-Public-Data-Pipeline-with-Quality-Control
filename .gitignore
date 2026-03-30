@@ -1,0 +1,26 @@
+# Ignore raw and cleaned CSV files
+data/raw/*.csv
+data/cleaned/*.csv
+
+# Ignore virtual environment
+venv/
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Ignore IDE settings
+.vscode/
+.idea/
+
+# Ignore large datasets
+*.db
+*.sqlite
+*.sqlite3
+
+# Ignore logs
+logs/
+
+# Ignore temporary files
+*.tmp
+*.temp

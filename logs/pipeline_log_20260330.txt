@@ -1,0 +1,751 @@
+2026-03-30 19:05:47,234 - INFO - --- Starting Universal Auto-ETL Pipeline ---
+2026-03-30 19:05:47,236 - INFO - Phase: CLEAN (Dynamic)
+2026-03-30 19:05:47,236 - INFO - Loading raw data from ..\data\raw\custom_upload.csv
+2026-03-30 19:05:50,290 - INFO - Pruned 232094 sparse records.
+2026-03-30 19:05:51,148 - INFO - Cleaning COMPLETED. Final yield: 197341 rows.
+2026-03-30 19:06:01,715 - INFO - Phase: VALIDATE (Dynamic)
+2026-03-30 19:06:01,727 - INFO - Could not find local file-backed GX project
+2026-03-30 19:06:01,729 - INFO - Created temporary directory 'C:\Users\rayan\AppData\Local\Temp\tmp0ki99jwi' for ephemeral docs site
+2026-03-30 19:06:01,732 - INFO - Loading 'datasources' ->
+[]
+2026-03-30 19:06:03,911 - WARNING - C:\Users\rayan\Desktop\projet data\project\venv\Lib\site-packages\great_expectations\expectations\expectation.py:1515: UserWarning: `result_format` configured at the Validator-level will not be persisted. Please add the configuration to your Checkpoint config or checkpoint_run() method instead.
+  warnings.warn(
+
+2026-03-30 19:06:03,925 - INFO - 	1 expectation(s) included in expectation_suite.
+2026-03-30 19:06:05,823 - INFO - 	1 expectation(s) included in expectation_suite.
+2026-03-30 19:06:05,836 - INFO - Dynamic GE Validation PASSED.
+2026-03-30 19:06:05,837 - INFO - Phase: AGGREGATE (Dynamic Dual-Axis)
+2026-03-30 19:06:05,838 - INFO - Dynamically grouping features for time-series and entities...
+2026-03-30 19:06:07,469 - INFO - Auto-selected iso_code as primary Entity.
+2026-03-30 19:06:07,530 - INFO - Auto-selected date as primary Time-Series index.
+2026-03-30 19:06:07,892 - INFO - Phase: REPORT (Dual Mapping)
+2026-03-30 19:06:07,909 - INFO - Dynamic final reports synced effectively in Custom Maps.
+2026-03-30 19:06:07,910 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:9: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  self.set_font('Arial', 'B', 15)
+
+2026-03-30 19:06:07,910 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:10: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  self.cell(0, 10, 'Universal Auto-ETL Quality Report', 0, 1, 'C')
+
+2026-03-30 19:06:07,911 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:34: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", size=12)
+
+2026-03-30 19:06:07,911 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:37: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", 'B', 14)
+
+2026-03-30 19:06:07,912 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:38: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(200, 10, "1. Executive Summary", 0, 1, 'L')
+
+2026-03-30 19:06:07,912 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:39: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", '', 12)
+
+2026-03-30 19:06:07,913 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:47: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", 'B', 14)
+
+2026-03-30 19:06:07,914 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:48: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(200, 10, "2. Processing Statistics", 0, 1, 'L')
+
+2026-03-30 19:06:07,914 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:49: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", '', 12)
+
+2026-03-30 19:06:07,914 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:53: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, "Value", 1, 1)
+
+2026-03-30 19:06:07,915 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:56: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, format(stats.get('initial_rows', 0), ','), 1, 1)
+
+2026-03-30 19:06:07,915 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:59: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, format(stats.get('final_rows', 0), ','), 1, 1)
+
+2026-03-30 19:06:07,915 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:62: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, format(stats.get('pruned_rows', 0), ','), 1, 1)
+
+2026-03-30 19:06:07,916 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:65: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, str(stats.get('outliers_handled', 0)), 1, 1)
+
+2026-03-30 19:06:07,916 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:68: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, str(stats.get('columns', 0)), 1, 1)
+
+2026-03-30 19:06:07,917 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:72: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", 'B', 14)
+
+2026-03-30 19:06:07,917 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:73: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(200, 10, "3. Pipeline Actions & Improvements", 0, 1, 'L')
+
+2026-03-30 19:06:07,917 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:74: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", '', 12)
+
+2026-03-30 19:06:07,923 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:17: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  self.set_font('Arial', 'I', 8)
+
+2026-03-30 19:06:07,924 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:18: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=0 use new_x=XPos.RIGHT, new_y=YPos.TOP.
+  self.cell(0, 10, f'Page {self.page_no()}', 0, 0, 'C')
+
+2026-03-30 19:06:07,926 - INFO - PDF Quality Report successfully generated at ..\data\curated\quality_report.pdf
+2026-03-30 19:06:07,927 - INFO - --- Pipeline Completed Automatically Outputting Multi-Dimensional BI logic in 20.69 seconds ---
+2026-03-30 19:12:34,558 - INFO - --- Starting Universal Auto-ETL Pipeline ---
+2026-03-30 19:12:34,560 - INFO - Phase: CLEAN (Dynamic)
+2026-03-30 19:12:34,561 - INFO - Loading raw data from ..\data\raw\custom_upload.csv
+2026-03-30 19:12:34,622 - INFO - Pruned 0 sparse records.
+2026-03-30 19:12:34,638 - INFO - Cleaning COMPLETED. Final yield: 45211 rows.
+2026-03-30 19:12:34,748 - INFO - Phase: VALIDATE (Dynamic)
+2026-03-30 19:12:34,752 - INFO - Could not find local file-backed GX project
+2026-03-30 19:12:34,755 - INFO - Created temporary directory 'C:\Users\rayan\AppData\Local\Temp\tmpjcohlk63' for ephemeral docs site
+2026-03-30 19:12:34,759 - INFO - Loading 'datasources' ->
+[]
+2026-03-30 19:12:34,951 - WARNING - C:\Users\rayan\Desktop\projet data\project\venv\Lib\site-packages\great_expectations\expectations\expectation.py:1515: UserWarning: `result_format` configured at the Validator-level will not be persisted. Please add the configuration to your Checkpoint config or checkpoint_run() method instead.
+  warnings.warn(
+
+2026-03-30 19:12:34,968 - INFO - 	1 expectation(s) included in expectation_suite.
+2026-03-30 19:12:35,134 - INFO - 	1 expectation(s) included in expectation_suite.
+2026-03-30 19:12:35,148 - INFO - Dynamic GE Validation PASSED.
+2026-03-30 19:12:35,148 - INFO - Phase: AGGREGATE (Dynamic Dual-Axis)
+2026-03-30 19:12:35,150 - INFO - Dynamically grouping features for time-series and entities...
+2026-03-30 19:12:35,245 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\aggregate.py:22: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  df[date_col] = pd.to_datetime(df[date_col], errors='coerce')
+
+2026-03-30 19:12:39,370 - INFO - Phase: REPORT (Dual Mapping)
+2026-03-30 19:12:39,372 - INFO - Dynamic final reports synced effectively in Custom Maps.
+2026-03-30 19:12:39,373 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:9: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  self.set_font('Arial', 'B', 15)
+
+2026-03-30 19:12:39,373 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:10: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  self.cell(0, 10, 'Universal Auto-ETL Quality Report', 0, 1, 'C')
+
+2026-03-30 19:12:39,374 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:34: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", size=12)
+
+2026-03-30 19:12:39,375 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:37: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", 'B', 14)
+
+2026-03-30 19:12:39,375 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:38: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(200, 10, "1. Executive Summary", 0, 1, 'L')
+
+2026-03-30 19:12:39,376 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:39: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", '', 12)
+
+2026-03-30 19:12:39,378 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:47: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", 'B', 14)
+
+2026-03-30 19:12:39,378 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:48: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(200, 10, "2. Processing Statistics", 0, 1, 'L')
+
+2026-03-30 19:12:39,379 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:49: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", '', 12)
+
+2026-03-30 19:12:39,379 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:53: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, "Value", 1, 1)
+
+2026-03-30 19:12:39,380 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:56: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, format(stats.get('initial_rows', 0), ','), 1, 1)
+
+2026-03-30 19:12:39,381 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:59: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, format(stats.get('final_rows', 0), ','), 1, 1)
+
+2026-03-30 19:12:39,381 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:62: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, format(stats.get('pruned_rows', 0), ','), 1, 1)
+
+2026-03-30 19:12:39,382 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:65: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, str(stats.get('outliers_handled', 0)), 1, 1)
+
+2026-03-30 19:12:39,382 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:68: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, str(stats.get('columns', 0)), 1, 1)
+
+2026-03-30 19:12:39,382 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:72: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", 'B', 14)
+
+2026-03-30 19:12:39,382 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:73: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(200, 10, "3. Pipeline Actions & Improvements", 0, 1, 'L')
+
+2026-03-30 19:12:39,383 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:74: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", '', 12)
+
+2026-03-30 19:12:39,388 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:17: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  self.set_font('Arial', 'I', 8)
+
+2026-03-30 19:12:39,388 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:18: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=0 use new_x=XPos.RIGHT, new_y=YPos.TOP.
+  self.cell(0, 10, f'Page {self.page_no()}', 0, 0, 'C')
+
+2026-03-30 19:12:39,390 - INFO - PDF Quality Report successfully generated at ..\data\curated\quality_report.pdf
+2026-03-30 19:12:39,390 - INFO - --- Pipeline Completed Automatically Outputting Multi-Dimensional BI logic in 4.83 seconds ---
+2026-03-30 19:13:23,775 - INFO - --- Starting Universal Auto-ETL Pipeline ---
+2026-03-30 19:13:23,776 - INFO - Phase: CLEAN (Dynamic)
+2026-03-30 19:13:23,777 - INFO - Loading raw data from ..\data\raw\custom_upload.csv
+2026-03-30 19:13:26,599 - INFO - Pruned 0 sparse records.
+2026-03-30 19:13:27,548 - INFO - Cleaning COMPLETED. Final yield: 197341 rows.
+2026-03-30 19:13:41,126 - INFO - Phase: VALIDATE (Dynamic)
+2026-03-30 19:13:41,141 - INFO - Could not find local file-backed GX project
+2026-03-30 19:13:41,147 - INFO - Created temporary directory 'C:\Users\rayan\AppData\Local\Temp\tmp_z2q_xjm' for ephemeral docs site
+2026-03-30 19:13:41,154 - INFO - Loading 'datasources' ->
+[]
+2026-03-30 19:13:43,812 - WARNING - C:\Users\rayan\Desktop\projet data\project\venv\Lib\site-packages\great_expectations\expectations\expectation.py:1515: UserWarning: `result_format` configured at the Validator-level will not be persisted. Please add the configuration to your Checkpoint config or checkpoint_run() method instead.
+  warnings.warn(
+
+2026-03-30 19:13:43,824 - INFO - 	1 expectation(s) included in expectation_suite.
+2026-03-30 19:13:45,777 - INFO - 	1 expectation(s) included in expectation_suite.
+2026-03-30 19:13:45,788 - INFO - Dynamic GE Validation PASSED.
+2026-03-30 19:13:45,788 - INFO - Phase: AGGREGATE (Dynamic Dual-Axis)
+2026-03-30 19:13:45,790 - INFO - Dynamically grouping features for time-series and entities...
+2026-03-30 19:13:47,400 - INFO - Auto-selected iso_code as primary Entity.
+2026-03-30 19:13:47,521 - INFO - Auto-selected date as primary Time-Series index.
+2026-03-30 19:13:47,913 - INFO - Phase: REPORT (Dual Mapping)
+2026-03-30 19:13:47,931 - INFO - Dynamic final reports synced effectively in Custom Maps.
+2026-03-30 19:13:47,933 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:9: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  self.set_font('Arial', 'B', 15)
+
+2026-03-30 19:13:47,934 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:10: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  self.cell(0, 10, 'Universal Auto-ETL Quality Report', 0, 1, 'C')
+
+2026-03-30 19:13:47,934 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:34: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", size=12)
+
+2026-03-30 19:13:47,935 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:37: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", 'B', 14)
+
+2026-03-30 19:13:47,935 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:38: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(200, 10, "1. Executive Summary", 0, 1, 'L')
+
+2026-03-30 19:13:47,935 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:39: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", '', 12)
+
+2026-03-30 19:13:47,938 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:47: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", 'B', 14)
+
+2026-03-30 19:13:47,938 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:48: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(200, 10, "2. Processing Statistics", 0, 1, 'L')
+
+2026-03-30 19:13:47,939 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:49: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", '', 12)
+
+2026-03-30 19:13:47,939 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:53: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, "Value", 1, 1)
+
+2026-03-30 19:13:47,939 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:56: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, format(stats.get('initial_rows', 0), ','), 1, 1)
+
+2026-03-30 19:13:47,940 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:59: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, format(stats.get('final_rows', 0), ','), 1, 1)
+
+2026-03-30 19:13:47,940 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:62: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, format(stats.get('pruned_rows', 0), ','), 1, 1)
+
+2026-03-30 19:13:47,940 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:65: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, str(stats.get('outliers_handled', 0)), 1, 1)
+
+2026-03-30 19:13:47,941 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:68: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, str(stats.get('columns', 0)), 1, 1)
+
+2026-03-30 19:13:47,941 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:72: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", 'B', 14)
+
+2026-03-30 19:13:47,941 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:73: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(200, 10, "3. Pipeline Actions & Improvements", 0, 1, 'L')
+
+2026-03-30 19:13:47,942 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:74: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", '', 12)
+
+2026-03-30 19:13:47,945 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:17: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  self.set_font('Arial', 'I', 8)
+
+2026-03-30 19:13:47,946 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:18: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=0 use new_x=XPos.RIGHT, new_y=YPos.TOP.
+  self.cell(0, 10, f'Page {self.page_no()}', 0, 0, 'C')
+
+2026-03-30 19:13:47,948 - INFO - PDF Quality Report successfully generated at ..\data\curated\quality_report.pdf
+2026-03-30 19:13:47,948 - INFO - --- Pipeline Completed Automatically Outputting Multi-Dimensional BI logic in 24.17 seconds ---
+2026-03-30 19:22:05,793 - INFO - --- Starting Universal Auto-ETL Pipeline ---
+2026-03-30 19:22:05,794 - INFO - Phase: CLEAN (Dynamic)
+2026-03-30 19:22:05,795 - INFO - Loading raw data from .\data\raw\custom_upload.csv
+2026-03-30 19:22:05,860 - INFO - Refined cleaning completed. Dropped 1 rows.
+2026-03-30 19:22:05,885 - INFO - Phase: VALIDATE (Dynamic)
+2026-03-30 19:22:05,892 - INFO - Could not find local file-backed GX project
+2026-03-30 19:22:05,896 - INFO - Created temporary directory 'C:\Users\rayan\AppData\Local\Temp\tmpwssajj6q' for ephemeral docs site
+2026-03-30 19:22:05,904 - INFO - Loading 'datasources' ->
+[]
+2026-03-30 19:22:05,987 - WARNING - C:\Users\rayan\Desktop\projet data\project\venv\Lib\site-packages\great_expectations\expectations\expectation.py:1515: UserWarning: `result_format` configured at the Validator-level will not be persisted. Please add the configuration to your Checkpoint config or checkpoint_run() method instead.
+  warnings.warn(
+
+2026-03-30 19:22:06,010 - INFO - 	1 expectation(s) included in expectation_suite.
+2026-03-30 19:22:06,040 - INFO - 	1 expectation(s) included in expectation_suite.
+2026-03-30 19:22:06,053 - INFO - Dynamic GE Validation PASSED.
+2026-03-30 19:22:06,054 - INFO - Phase: AGGREGATE (Dynamic Dual-Axis)
+2026-03-30 19:22:06,056 - INFO - Dynamically grouping features for time-series and entities...
+2026-03-30 19:22:06,062 - INFO - Using country as primary Entity for latest snapshotting.
+2026-03-30 19:22:06,071 - INFO - Compiling temporal trend with date index.
+2026-03-30 19:22:06,080 - INFO - Phase: REPORT (Dual Mapping)
+2026-03-30 19:22:06,107 - INFO - Dynamic final reports synced effectively in Custom Maps.
+2026-03-30 19:22:06,120 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:9: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  self.set_font('Arial', 'B', 15)
+
+2026-03-30 19:22:06,121 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:10: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  self.cell(0, 10, 'Universal Auto-ETL Quality Report', 0, 1, 'C')
+
+2026-03-30 19:22:06,122 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:34: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", size=12)
+
+2026-03-30 19:22:06,123 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:37: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", 'B', 14)
+
+2026-03-30 19:22:06,123 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:38: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(200, 10, "1. Executive Summary", 0, 1, 'L')
+
+2026-03-30 19:22:06,124 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:39: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", '', 12)
+
+2026-03-30 19:22:06,127 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:47: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", 'B', 14)
+
+2026-03-30 19:22:06,127 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:48: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(200, 10, "2. Processing Statistics", 0, 1, 'L')
+
+2026-03-30 19:22:06,128 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:49: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", '', 12)
+
+2026-03-30 19:22:06,129 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:53: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, "Value", 1, 1)
+
+2026-03-30 19:22:06,130 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:56: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, format(stats.get('initial_rows', 0), ','), 1, 1)
+
+2026-03-30 19:22:06,131 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:59: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, format(stats.get('final_rows', 0), ','), 1, 1)
+
+2026-03-30 19:22:06,132 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:62: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, format(stats.get('pruned_rows', 0), ','), 1, 1)
+
+2026-03-30 19:22:06,133 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:65: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, str(stats.get('outliers_handled', 0)), 1, 1)
+
+2026-03-30 19:22:06,134 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:68: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, str(stats.get('columns', 0)), 1, 1)
+
+2026-03-30 19:22:06,135 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:72: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", 'B', 14)
+
+2026-03-30 19:22:06,136 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:73: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(200, 10, "3. Pipeline Actions & Improvements", 0, 1, 'L')
+
+2026-03-30 19:22:06,137 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:74: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", '', 12)
+
+2026-03-30 19:22:06,143 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:17: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  self.set_font('Arial', 'I', 8)
+
+2026-03-30 19:22:06,144 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:18: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=0 use new_x=XPos.RIGHT, new_y=YPos.TOP.
+  self.cell(0, 10, f'Page {self.page_no()}', 0, 0, 'C')
+
+2026-03-30 19:22:06,147 - INFO - PDF Quality Report successfully generated at .\data\curated\quality_report.pdf
+2026-03-30 19:22:06,147 - INFO - --- Pipeline Completed Automatically Outputting Multi-Dimensional BI logic in 0.35 seconds ---
+2026-03-30 19:24:17,236 - INFO - --- Starting Universal Auto-ETL Pipeline ---
+2026-03-30 19:24:17,237 - INFO - Phase: CLEAN (Dynamic)
+2026-03-30 19:24:17,238 - INFO - Loading raw data from ..\data\raw\custom_upload.csv
+2026-03-30 19:24:35,625 - INFO - Refined cleaning completed. Dropped 33858 rows.
+2026-03-30 19:24:51,474 - INFO - Phase: VALIDATE (Dynamic)
+2026-03-30 19:24:51,482 - INFO - Could not find local file-backed GX project
+2026-03-30 19:24:51,486 - INFO - Created temporary directory 'C:\Users\rayan\AppData\Local\Temp\tmp_63hykua' for ephemeral docs site
+2026-03-30 19:24:51,490 - INFO - Loading 'datasources' ->
+[]
+2026-03-30 19:24:54,047 - WARNING - C:\Users\rayan\Desktop\projet data\project\venv\Lib\site-packages\great_expectations\compatibility\sqlalchemy_and_pandas.py:46: DtypeWarning: Columns (33) have mixed types. Specify dtype option on import or set low_memory=False.
+  reader_fn_result = reader_fn(**reader_options)
+
+2026-03-30 19:24:55,165 - WARNING - C:\Users\rayan\Desktop\projet data\project\venv\Lib\site-packages\great_expectations\expectations\expectation.py:1515: UserWarning: `result_format` configured at the Validator-level will not be persisted. Please add the configuration to your Checkpoint config or checkpoint_run() method instead.
+  warnings.warn(
+
+2026-03-30 19:24:55,179 - INFO - 	1 expectation(s) included in expectation_suite.
+2026-03-30 19:24:57,186 - WARNING - C:\Users\rayan\Desktop\projet data\project\venv\Lib\site-packages\great_expectations\compatibility\sqlalchemy_and_pandas.py:46: DtypeWarning: Columns (33) have mixed types. Specify dtype option on import or set low_memory=False.
+  reader_fn_result = reader_fn(**reader_options)
+
+2026-03-30 19:24:58,319 - INFO - 	1 expectation(s) included in expectation_suite.
+2026-03-30 19:24:58,334 - INFO - Dynamic GE Validation PASSED.
+2026-03-30 19:24:58,334 - INFO - Phase: AGGREGATE (Dynamic Dual-Axis)
+2026-03-30 19:24:58,337 - INFO - Dynamically grouping features for time-series and entities...
+2026-03-30 19:25:00,402 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\aggregate.py:16: DtypeWarning: Columns (33) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(cleaned_path)
+
+2026-03-30 19:25:00,715 - INFO - Using location as primary Entity for latest snapshotting.
+2026-03-30 19:25:00,962 - INFO - Compiling temporal trend with date index.
+2026-03-30 19:25:01,652 - INFO - Phase: REPORT (Dual Mapping)
+2026-03-30 19:25:01,671 - INFO - Dynamic final reports synced effectively in Custom Maps.
+2026-03-30 19:25:01,673 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:9: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  self.set_font('Arial', 'B', 15)
+
+2026-03-30 19:25:01,674 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:10: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  self.cell(0, 10, 'Universal Auto-ETL Quality Report', 0, 1, 'C')
+
+2026-03-30 19:25:01,675 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:34: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", size=12)
+
+2026-03-30 19:25:01,675 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:37: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", 'B', 14)
+
+2026-03-30 19:25:01,676 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:38: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(200, 10, "1. Executive Summary", 0, 1, 'L')
+
+2026-03-30 19:25:01,676 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:39: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", '', 12)
+
+2026-03-30 19:25:01,678 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:47: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", 'B', 14)
+
+2026-03-30 19:25:01,679 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:48: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(200, 10, "2. Processing Statistics", 0, 1, 'L')
+
+2026-03-30 19:25:01,680 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:49: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", '', 12)
+
+2026-03-30 19:25:01,680 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:53: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, "Value", 1, 1)
+
+2026-03-30 19:25:01,681 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:56: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, format(stats.get('initial_rows', 0), ','), 1, 1)
+
+2026-03-30 19:25:01,682 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:59: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, format(stats.get('final_rows', 0), ','), 1, 1)
+
+2026-03-30 19:25:01,682 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:62: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, format(stats.get('pruned_rows', 0), ','), 1, 1)
+
+2026-03-30 19:25:01,683 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:65: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, str(stats.get('outliers_handled', 0)), 1, 1)
+
+2026-03-30 19:25:01,684 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:68: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, str(stats.get('columns', 0)), 1, 1)
+
+2026-03-30 19:25:01,684 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:72: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", 'B', 14)
+
+2026-03-30 19:25:01,684 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:73: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(200, 10, "3. Pipeline Actions & Improvements", 0, 1, 'L')
+
+2026-03-30 19:25:01,684 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:74: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", '', 12)
+
+2026-03-30 19:25:01,688 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:17: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  self.set_font('Arial', 'I', 8)
+
+2026-03-30 19:25:01,689 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:18: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=0 use new_x=XPos.RIGHT, new_y=YPos.TOP.
+  self.cell(0, 10, f'Page {self.page_no()}', 0, 0, 'C')
+
+2026-03-30 19:25:01,690 - INFO - PDF Quality Report successfully generated at ..\data\curated\quality_report.pdf
+2026-03-30 19:25:01,690 - INFO - --- Pipeline Completed Automatically Outputting Multi-Dimensional BI logic in 44.45 seconds ---
+2026-03-30 19:30:02,992 - INFO - --- Starting Universal Auto-ETL Pipeline ---
+2026-03-30 19:30:02,993 - INFO - Phase: CLEAN (Dynamic)
+2026-03-30 19:30:02,994 - INFO - Loading raw data from ..\data\raw\custom_upload.csv
+2026-03-30 19:30:20,540 - INFO - Refined cleaning completed. Dropped 33858 rows.
+2026-03-30 19:30:35,745 - INFO - Phase: VALIDATE (Dynamic)
+2026-03-30 19:30:35,752 - INFO - Could not find local file-backed GX project
+2026-03-30 19:30:35,757 - INFO - Created temporary directory 'C:\Users\rayan\AppData\Local\Temp\tmpks7dbtm0' for ephemeral docs site
+2026-03-30 19:30:35,768 - INFO - Loading 'datasources' ->
+[]
+2026-03-30 19:30:38,296 - WARNING - C:\Users\rayan\Desktop\projet data\project\venv\Lib\site-packages\great_expectations\compatibility\sqlalchemy_and_pandas.py:46: DtypeWarning: Columns (33) have mixed types. Specify dtype option on import or set low_memory=False.
+  reader_fn_result = reader_fn(**reader_options)
+
+2026-03-30 19:30:39,349 - WARNING - C:\Users\rayan\Desktop\projet data\project\venv\Lib\site-packages\great_expectations\expectations\expectation.py:1515: UserWarning: `result_format` configured at the Validator-level will not be persisted. Please add the configuration to your Checkpoint config or checkpoint_run() method instead.
+  warnings.warn(
+
+2026-03-30 19:30:39,361 - INFO - 	1 expectation(s) included in expectation_suite.
+2026-03-30 19:30:41,514 - WARNING - C:\Users\rayan\Desktop\projet data\project\venv\Lib\site-packages\great_expectations\compatibility\sqlalchemy_and_pandas.py:46: DtypeWarning: Columns (33) have mixed types. Specify dtype option on import or set low_memory=False.
+  reader_fn_result = reader_fn(**reader_options)
+
+2026-03-30 19:30:42,568 - INFO - 	1 expectation(s) included in expectation_suite.
+2026-03-30 19:30:42,582 - INFO - Dynamic GE Validation PASSED.
+2026-03-30 19:30:42,583 - INFO - Phase: AGGREGATE (Dynamic Dual-Axis)
+2026-03-30 19:30:42,586 - INFO - Dynamically grouping features for time-series and entities...
+2026-03-30 19:30:45,056 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\aggregate.py:16: DtypeWarning: Columns (33) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(cleaned_path)
+
+2026-03-30 19:30:45,412 - INFO - Using location as primary Entity for latest snapshotting.
+2026-03-30 19:30:45,690 - INFO - Compiling temporal trend with date index.
+2026-03-30 19:30:46,434 - INFO - Phase: REPORT (Dual Mapping)
+2026-03-30 19:30:46,454 - INFO - Dynamic final reports synced effectively in Custom Maps.
+2026-03-30 19:30:46,455 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:9: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  self.set_font('Arial', 'B', 15)
+
+2026-03-30 19:30:46,455 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:10: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  self.cell(0, 10, 'Universal Auto-ETL Quality Report', 0, 1, 'C')
+
+2026-03-30 19:30:46,456 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:34: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", size=12)
+
+2026-03-30 19:30:46,456 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:37: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", 'B', 14)
+
+2026-03-30 19:30:46,456 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:38: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(200, 10, "1. Executive Summary", 0, 1, 'L')
+
+2026-03-30 19:30:46,456 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:39: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", '', 12)
+
+2026-03-30 19:30:46,458 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:47: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", 'B', 14)
+
+2026-03-30 19:30:46,458 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:48: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(200, 10, "2. Processing Statistics", 0, 1, 'L')
+
+2026-03-30 19:30:46,458 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:49: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", '', 12)
+
+2026-03-30 19:30:46,459 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:53: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, "Value", 1, 1)
+
+2026-03-30 19:30:46,459 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:56: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, format(stats.get('initial_rows', 0), ','), 1, 1)
+
+2026-03-30 19:30:46,459 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:59: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, format(stats.get('final_rows', 0), ','), 1, 1)
+
+2026-03-30 19:30:46,460 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:62: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, format(stats.get('pruned_rows', 0), ','), 1, 1)
+
+2026-03-30 19:30:46,460 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:65: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, str(stats.get('outliers_handled', 0)), 1, 1)
+
+2026-03-30 19:30:46,460 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:68: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, str(stats.get('columns', 0)), 1, 1)
+
+2026-03-30 19:30:46,461 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:72: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", 'B', 14)
+
+2026-03-30 19:30:46,461 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:73: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(200, 10, "3. Pipeline Actions & Improvements", 0, 1, 'L')
+
+2026-03-30 19:30:46,461 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:74: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", '', 12)
+
+2026-03-30 19:30:46,466 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:17: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  self.set_font('Arial', 'I', 8)
+
+2026-03-30 19:30:46,467 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:18: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=0 use new_x=XPos.RIGHT, new_y=YPos.TOP.
+  self.cell(0, 10, f'Page {self.page_no()}', 0, 0, 'C')
+
+2026-03-30 19:30:46,471 - INFO - PDF Quality Report successfully generated at ..\data\curated\quality_report.pdf
+2026-03-30 19:30:46,472 - INFO - --- Pipeline Completed Automatically Outputting Multi-Dimensional BI logic in 43.48 seconds ---
+2026-03-30 19:35:55,692 - INFO - --- Starting Universal Auto-ETL Pipeline ---
+2026-03-30 19:35:55,695 - INFO - Phase: CLEAN (Dynamic)
+2026-03-30 19:35:55,696 - INFO - Loading raw data from ..\data\raw\custom_upload.csv
+2026-03-30 19:36:14,741 - INFO - Refined cleaning completed. Dropped 33858 rows.
+2026-03-30 19:36:30,149 - INFO - Phase: VALIDATE (Dynamic)
+2026-03-30 19:36:30,163 - INFO - Could not find local file-backed GX project
+2026-03-30 19:36:30,170 - INFO - Created temporary directory 'C:\Users\rayan\AppData\Local\Temp\tmp5343zyty' for ephemeral docs site
+2026-03-30 19:36:30,176 - INFO - Loading 'datasources' ->
+[]
+2026-03-30 19:36:32,641 - WARNING - C:\Users\rayan\Desktop\projet data\project\venv\Lib\site-packages\great_expectations\compatibility\sqlalchemy_and_pandas.py:46: DtypeWarning: Columns (33) have mixed types. Specify dtype option on import or set low_memory=False.
+  reader_fn_result = reader_fn(**reader_options)
+
+2026-03-30 19:36:33,606 - WARNING - C:\Users\rayan\Desktop\projet data\project\venv\Lib\site-packages\great_expectations\expectations\expectation.py:1515: UserWarning: `result_format` configured at the Validator-level will not be persisted. Please add the configuration to your Checkpoint config or checkpoint_run() method instead.
+  warnings.warn(
+
+2026-03-30 19:36:33,623 - INFO - 	1 expectation(s) included in expectation_suite.
+2026-03-30 19:36:35,351 - WARNING - C:\Users\rayan\Desktop\projet data\project\venv\Lib\site-packages\great_expectations\compatibility\sqlalchemy_and_pandas.py:46: DtypeWarning: Columns (33) have mixed types. Specify dtype option on import or set low_memory=False.
+  reader_fn_result = reader_fn(**reader_options)
+
+2026-03-30 19:36:36,320 - INFO - 	1 expectation(s) included in expectation_suite.
+2026-03-30 19:36:36,331 - INFO - Dynamic GE Validation PASSED.
+2026-03-30 19:36:36,332 - INFO - Phase: AGGREGATE (Dynamic Dual-Axis)
+2026-03-30 19:36:36,335 - INFO - Dynamically grouping features for time-series and entities...
+2026-03-30 19:36:38,246 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\aggregate.py:16: DtypeWarning: Columns (33) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(cleaned_path)
+
+2026-03-30 19:36:38,569 - INFO - Using location as primary Entity for latest snapshotting.
+2026-03-30 19:36:38,821 - INFO - Compiling temporal trend with date index.
+2026-03-30 19:36:39,468 - INFO - Phase: REPORT (Dual Mapping)
+2026-03-30 19:36:39,492 - INFO - Dynamic final reports synced effectively in Custom Maps.
+2026-03-30 19:36:39,494 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:9: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  self.set_font('Arial', 'B', 15)
+
+2026-03-30 19:36:39,495 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:10: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  self.cell(0, 10, 'Universal Auto-ETL Quality Report', 0, 1, 'C')
+
+2026-03-30 19:36:39,495 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:34: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", size=12)
+
+2026-03-30 19:36:39,495 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:37: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", 'B', 14)
+
+2026-03-30 19:36:39,496 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:38: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(200, 10, "1. Executive Summary", 0, 1, 'L')
+
+2026-03-30 19:36:39,496 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:39: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", '', 12)
+
+2026-03-30 19:36:39,498 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:47: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", 'B', 14)
+
+2026-03-30 19:36:39,499 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:48: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(200, 10, "2. Processing Statistics", 0, 1, 'L')
+
+2026-03-30 19:36:39,499 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:49: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", '', 12)
+
+2026-03-30 19:36:39,500 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:53: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, "Value", 1, 1)
+
+2026-03-30 19:36:39,500 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:56: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, format(stats.get('initial_rows', 0), ','), 1, 1)
+
+2026-03-30 19:36:39,500 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:59: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, format(stats.get('final_rows', 0), ','), 1, 1)
+
+2026-03-30 19:36:39,501 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:62: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, format(stats.get('pruned_rows', 0), ','), 1, 1)
+
+2026-03-30 19:36:39,501 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:65: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, str(stats.get('outliers_handled', 0)), 1, 1)
+
+2026-03-30 19:36:39,501 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:68: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, str(stats.get('columns', 0)), 1, 1)
+
+2026-03-30 19:36:39,502 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:72: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", 'B', 14)
+
+2026-03-30 19:36:39,502 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:73: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=1 use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(200, 10, "3. Pipeline Actions & Improvements", 0, 1, 'L')
+
+2026-03-30 19:36:39,502 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:74: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  pdf.set_font("Arial", '', 12)
+
+2026-03-30 19:36:39,506 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:17: DeprecationWarning: Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+  self.set_font('Arial', 'I', 8)
+
+2026-03-30 19:36:39,506 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\reporting.py:18: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=0 use new_x=XPos.RIGHT, new_y=YPos.TOP.
+  self.cell(0, 10, f'Page {self.page_no()}', 0, 0, 'C')
+
+2026-03-30 19:36:39,509 - INFO - PDF Quality Report successfully generated at ..\data\curated\quality_report.pdf
+2026-03-30 19:36:39,509 - INFO - --- Pipeline Completed Automatically Outputting Multi-Dimensional BI logic in 43.82 seconds ---
+2026-03-30 19:37:51,975 - INFO - --- Starting Universal Auto-ETL Pipeline ---
+2026-03-30 19:37:51,976 - INFO - Phase: CLEAN (Dynamic)
+2026-03-30 19:37:51,977 - INFO - Loading raw data from .\data\raw\custom_upload.csv
+2026-03-30 19:38:09,743 - INFO - Refined cleaning completed. Dropped 33858 rows.
+2026-03-30 19:38:26,040 - INFO - Phase: VALIDATE (Dynamic)
+2026-03-30 19:38:26,049 - INFO - Could not find local file-backed GX project
+2026-03-30 19:38:26,053 - INFO - Created temporary directory 'C:\Users\rayan\AppData\Local\Temp\tmpyfa8x0zb' for ephemeral docs site
+2026-03-30 19:38:26,057 - INFO - Loading 'datasources' ->
+[]
+2026-03-30 19:38:28,621 - WARNING - C:\Users\rayan\Desktop\projet data\project\venv\Lib\site-packages\great_expectations\compatibility\sqlalchemy_and_pandas.py:46: DtypeWarning: Columns (33) have mixed types. Specify dtype option on import or set low_memory=False.
+  reader_fn_result = reader_fn(**reader_options)
+
+2026-03-30 19:38:29,738 - WARNING - C:\Users\rayan\Desktop\projet data\project\venv\Lib\site-packages\great_expectations\expectations\expectation.py:1515: UserWarning: `result_format` configured at the Validator-level will not be persisted. Please add the configuration to your Checkpoint config or checkpoint_run() method instead.
+  warnings.warn(
+
+2026-03-30 19:38:29,750 - INFO - 	1 expectation(s) included in expectation_suite.
+2026-03-30 19:38:31,575 - WARNING - C:\Users\rayan\Desktop\projet data\project\venv\Lib\site-packages\great_expectations\compatibility\sqlalchemy_and_pandas.py:46: DtypeWarning: Columns (33) have mixed types. Specify dtype option on import or set low_memory=False.
+  reader_fn_result = reader_fn(**reader_options)
+
+2026-03-30 19:38:32,702 - INFO - 	1 expectation(s) included in expectation_suite.
+2026-03-30 19:38:32,713 - INFO - Dynamic GE Validation PASSED.
+2026-03-30 19:38:32,714 - INFO - Phase: AGGREGATE (Dynamic Dual-Axis)
+2026-03-30 19:38:32,715 - INFO - Dynamically grouping features for time-series and entities...
+2026-03-30 19:38:35,024 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\aggregate.py:16: DtypeWarning: Columns (33) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(cleaned_path)
+
+2026-03-30 19:38:35,428 - INFO - Using location as primary Entity for latest snapshotting.
+2026-03-30 19:38:35,788 - INFO - Compiling temporal trend with date index.
+2026-03-30 19:38:36,539 - INFO - Phase: REPORT (Dual Mapping)
+2026-03-30 19:38:36,579 - INFO - Dynamic final reports synced effectively in Custom Maps.
+2026-03-30 19:38:36,596 - INFO - PDF Quality Report successfully generated at .\data\curated\quality_report.pdf
+2026-03-30 19:38:36,597 - INFO - --- Pipeline Completed Automatically Outputting Multi-Dimensional BI logic in 44.62 seconds ---
+2026-03-30 19:42:43,888 - INFO - --- Starting Universal Auto-ETL Pipeline ---
+2026-03-30 19:42:43,892 - INFO - Phase: CLEAN (Refined)
+2026-03-30 19:42:43,894 - INFO - Loading raw data from ..\data\raw\custom_upload.csv
+2026-03-30 19:43:37,924 - INFO - Refined cleaning completed. Dropped 33858 rows.
+2026-03-30 19:43:41,985 - INFO - --- Starting Universal Auto-ETL Pipeline ---
+2026-03-30 19:43:41,993 - INFO - Downloading from OWID Public: https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/latest/owid-covid-latest.csv
+2026-03-30 19:43:43,128 - INFO - Phase: CLEAN (Refined)
+2026-03-30 19:43:43,132 - INFO - Loading raw data from ..\data\raw\custom_upload.csv
+2026-03-30 19:44:00,602 - INFO - Refined cleaning completed. Dropped 12 rows.
+2026-03-30 19:44:00,883 - INFO - Phase: VALIDATE
+2026-03-30 19:44:00,905 - INFO - Could not find local file-backed GX project
+2026-03-30 19:44:00,913 - INFO - Created temporary directory 'C:\Users\rayan\AppData\Local\Temp\tmpisvgon6d' for ephemeral docs site
+2026-03-30 19:44:00,925 - INFO - Loading 'datasources' ->
+[]
+2026-03-30 19:44:03,944 - WARNING - C:\Users\rayan\Desktop\projet data\project\venv\Lib\site-packages\great_expectations\expectations\expectation.py:1515: UserWarning: `result_format` configured at the Validator-level will not be persisted. Please add the configuration to your Checkpoint config or checkpoint_run() method instead.
+  warnings.warn(
+
+2026-03-30 19:44:04,029 - INFO - 	1 expectation(s) included in expectation_suite.
+2026-03-30 19:44:07,163 - INFO - 	1 expectation(s) included in expectation_suite.
+2026-03-30 19:44:07,201 - INFO - Dynamic GE Validation PASSED.
+2026-03-30 19:44:07,202 - INFO - Phase: AGGREGATE
+2026-03-30 19:44:07,210 - INFO - Dynamically grouping features for time-series and entities...
+2026-03-30 19:44:09,188 - INFO - Using location as primary Entity for latest snapshotting.
+2026-03-30 19:44:09,314 - INFO - Compiling temporal trend with last_updated_date index.
+2026-03-30 19:44:09,568 - INFO - Phase: REPORT
+2026-03-30 19:44:09,644 - INFO - Dynamic final reports synced effectively in Custom Maps.
+2026-03-30 19:44:09,665 - INFO - PDF Quality Report successfully generated at ..\data\curated\quality_report.pdf
+2026-03-30 19:44:09,667 - INFO - --- Pipeline Completed Automatically in 27.68 seconds ---
+2026-03-30 19:44:18,540 - INFO - Phase: VALIDATE
+2026-03-30 19:44:18,561 - INFO - Could not find local file-backed GX project
+2026-03-30 19:44:18,572 - INFO - Created temporary directory 'C:\Users\rayan\AppData\Local\Temp\tmppx2u6o70' for ephemeral docs site
+2026-03-30 19:44:18,585 - INFO - Loading 'datasources' ->
+[]
+2026-03-30 19:44:21,235 - WARNING - C:\Users\rayan\Desktop\projet data\project\venv\Lib\site-packages\great_expectations\expectations\expectation.py:1515: UserWarning: `result_format` configured at the Validator-level will not be persisted. Please add the configuration to your Checkpoint config or checkpoint_run() method instead.
+  warnings.warn(
+
+2026-03-30 19:44:21,249 - INFO - 	1 expectation(s) included in expectation_suite.
+2026-03-30 19:44:23,255 - INFO - 	1 expectation(s) included in expectation_suite.
+2026-03-30 19:44:23,267 - INFO - Dynamic GE Validation PASSED.
+2026-03-30 19:44:23,268 - INFO - Phase: AGGREGATE
+2026-03-30 19:44:23,269 - INFO - Dynamically grouping features for time-series and entities...
+2026-03-30 19:44:24,934 - INFO - Using location as primary Entity for latest snapshotting.
+2026-03-30 19:44:25,105 - INFO - Compiling temporal trend with last_updated_date index.
+2026-03-30 19:44:25,429 - INFO - Phase: REPORT
+2026-03-30 19:44:25,464 - INFO - Dynamic final reports synced effectively in Custom Maps.
+2026-03-30 19:44:25,474 - INFO - PDF Quality Report successfully generated at ..\data\curated\quality_report.pdf
+2026-03-30 19:44:25,474 - INFO - --- Pipeline Completed Automatically in 101.58 seconds ---
+2026-03-30 19:46:06,636 - INFO - --- Starting Universal Auto-ETL Pipeline ---
+2026-03-30 19:46:06,640 - INFO - Downloading from OWID Full Time-Series: https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv
+2026-03-30 19:46:14,536 - INFO - Phase: CLEAN (Refined)
+2026-03-30 19:46:14,538 - INFO - Loading raw data from .\data\raw\custom_upload.csv
+2026-03-30 19:46:36,906 - INFO - --- Starting Universal Auto-ETL Pipeline ---
+2026-03-30 19:46:36,908 - INFO - Downloading from OWID Full Time-Series: https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv
+2026-03-30 19:46:38,614 - INFO - Phase: CLEAN (Refined)
+2026-03-30 19:46:38,616 - INFO - Loading raw data from ..\data\raw\custom_upload.csv
+2026-03-30 19:46:38,892 - INFO - Refined cleaning completed. Dropped 33858 rows.
+2026-03-30 19:47:00,734 - INFO - Phase: VALIDATE
+2026-03-30 19:47:00,743 - INFO - Could not find local file-backed GX project
+2026-03-30 19:47:00,748 - INFO - Created temporary directory 'C:\Users\rayan\AppData\Local\Temp\tmplrxm9c2r' for ephemeral docs site
+2026-03-30 19:47:00,752 - INFO - Loading 'datasources' ->
+[]
+2026-03-30 19:47:04,759 - WARNING - C:\Users\rayan\Desktop\projet data\project\venv\Lib\site-packages\great_expectations\compatibility\sqlalchemy_and_pandas.py:46: DtypeWarning: Columns (33) have mixed types. Specify dtype option on import or set low_memory=False.
+  reader_fn_result = reader_fn(**reader_options)
+
+2026-03-30 19:47:05,664 - INFO - Refined cleaning completed. Dropped 33858 rows.
+2026-03-30 19:47:06,111 - WARNING - C:\Users\rayan\Desktop\projet data\project\venv\Lib\site-packages\great_expectations\expectations\expectation.py:1515: UserWarning: `result_format` configured at the Validator-level will not be persisted. Please add the configuration to your Checkpoint config or checkpoint_run() method instead.
+  warnings.warn(
+
+2026-03-30 19:47:06,129 - INFO - 	1 expectation(s) included in expectation_suite.
+2026-03-30 19:47:06,290 - INFO - 	1 expectation(s) included in expectation_suite.
+2026-03-30 19:47:06,300 - INFO - Dynamic GE Validation PASSED.
+2026-03-30 19:47:06,301 - INFO - Phase: AGGREGATE
+2026-03-30 19:47:06,303 - INFO - Dynamically grouping features for time-series and entities...
+2026-03-30 19:47:06,384 - INFO - Using location as primary Entity for latest snapshotting.
+2026-03-30 19:47:06,401 - INFO - Compiling temporal trend with date index.
+2026-03-30 19:47:06,430 - INFO - Phase: REPORT
+2026-03-30 19:47:06,459 - INFO - Dynamic final reports synced effectively in Custom Maps.
+2026-03-30 19:47:06,468 - INFO - PDF Quality Report successfully generated at .\data\curated\quality_report.pdf
+2026-03-30 19:47:06,468 - INFO - --- Pipeline Completed Automatically in 59.83 seconds ---
+2026-03-30 19:47:22,830 - INFO - Phase: VALIDATE
+2026-03-30 19:47:22,836 - INFO - Could not find local file-backed GX project
+2026-03-30 19:47:22,840 - INFO - Created temporary directory 'C:\Users\rayan\AppData\Local\Temp\tmptlzaezc_' for ephemeral docs site
+2026-03-30 19:47:22,846 - INFO - Loading 'datasources' ->
+[]
+2026-03-30 19:47:25,723 - WARNING - C:\Users\rayan\Desktop\projet data\project\venv\Lib\site-packages\great_expectations\compatibility\sqlalchemy_and_pandas.py:46: DtypeWarning: Columns (33) have mixed types. Specify dtype option on import or set low_memory=False.
+  reader_fn_result = reader_fn(**reader_options)
+
+2026-03-30 19:47:26,814 - WARNING - C:\Users\rayan\Desktop\projet data\project\venv\Lib\site-packages\great_expectations\expectations\expectation.py:1515: UserWarning: `result_format` configured at the Validator-level will not be persisted. Please add the configuration to your Checkpoint config or checkpoint_run() method instead.
+  warnings.warn(
+
+2026-03-30 19:47:26,827 - INFO - 	1 expectation(s) included in expectation_suite.
+2026-03-30 19:47:29,598 - WARNING - C:\Users\rayan\Desktop\projet data\project\venv\Lib\site-packages\great_expectations\compatibility\sqlalchemy_and_pandas.py:46: DtypeWarning: Columns (33) have mixed types. Specify dtype option on import or set low_memory=False.
+  reader_fn_result = reader_fn(**reader_options)
+
+2026-03-30 19:47:30,517 - INFO - 	1 expectation(s) included in expectation_suite.
+2026-03-30 19:47:30,529 - INFO - Dynamic GE Validation PASSED.
+2026-03-30 19:47:30,530 - INFO - Phase: AGGREGATE
+2026-03-30 19:47:30,531 - INFO - Dynamically grouping features for time-series and entities...
+2026-03-30 19:47:32,592 - WARNING - C:\Users\rayan\Desktop\projet data\project\pipeline\aggregate.py:16: DtypeWarning: Columns (33) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(cleaned_path)
+
+2026-03-30 19:47:32,885 - INFO - Using location as primary Entity for latest snapshotting.
+2026-03-30 19:47:33,165 - INFO - Compiling temporal trend with date index.
+2026-03-30 19:47:33,812 - INFO - Phase: REPORT
+2026-03-30 19:47:33,832 - INFO - Dynamic final reports synced effectively in Custom Maps.
+2026-03-30 19:47:33,840 - INFO - PDF Quality Report successfully generated at ..\data\curated\quality_report.pdf
+2026-03-30 19:47:33,840 - INFO - --- Pipeline Completed Automatically in 56.93 seconds ---
