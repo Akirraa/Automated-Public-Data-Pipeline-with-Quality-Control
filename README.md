@@ -8,6 +8,17 @@ This project provides an automated Extract, Transform, and Load (ETL) data pipel
 * Frontend: Node.js, React, Vite, Recharts, Vanilla CSS (Glassmorphism).
 * Pipeline: Automated data parsing, type-inference, cleaning, and dual-axis aggregation (Entity totals and Time-Series progression).
 
+## Visual Overview
+
+### Main Dashboard
+![Dashboard Overview](./docs/screenshots/dashboard_overview.png)
+
+### Entity Analysis
+![Entity Analysis](./docs/screenshots/dashboard_entities.png)
+
+### Time Series Progression
+![Time Series Analysis](./docs/screenshots/dashboard_timeseries.png)
+
 ## Local Execution
 
 ### Prerequisites

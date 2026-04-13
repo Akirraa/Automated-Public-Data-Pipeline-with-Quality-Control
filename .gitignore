@@ -1,6 +1,7 @@
-# Ignore raw and cleaned CSV files
-data/raw/*.csv
-data/cleaned/*.csv
+# Ignore data files and cache
+*.csv
+cache/
+*.pdf
 
 # Ignore virtual environment
 venv/
