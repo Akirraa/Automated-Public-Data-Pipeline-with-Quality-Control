@@ -79,10 +79,10 @@ def run_pipeline():
         update_status("Reporting", "Formatting dashboards and quality summaries...", 90)
         final_report_paths = generate_report(agg_paths_dict, curated_dir)
         
-        # 7. Generate PDF Summary
+        # 7. Generate Data Integrity & Progression Briefing (PDF)
         stats_path = os.path.join(cleaned_dir, "cleaning_stats.json")
-        pdf_path = os.path.join(curated_dir, "quality_report.pdf")
-        generate_pdf_report(stats_path, pdf_path)
+        pdf_path = os.path.join(curated_dir, "integrity_report.pdf")
+        generate_pdf_report(stats_path, cleaned_path, pdf_path)
         
         elapsed = time.time() - start_time
         logging.info(f"--- Pipeline Completed Automatically in {elapsed:.2f} seconds ---")

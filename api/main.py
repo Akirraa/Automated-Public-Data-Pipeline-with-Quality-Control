@@ -150,9 +150,9 @@ def power_bi_connector():
 
 @app.get("/api/download/pdf")
 def download_pdf_report():
-    path = os.path.join("..", "data", "curated", "quality_report.pdf")
+    path = os.path.join("..", "data", "curated", "integrity_report.pdf")
     if os.path.exists(path):
-        return FileResponse(path, filename="data_quality_report.pdf", media_type="application/pdf")
+        return FileResponse(path, filename="clinical_integrity_report.pdf", media_type="application/pdf")
     return JSONResponse(status_code=404, content={"message": "PDF report not available."})
 
 @app.get("/api/metrics")

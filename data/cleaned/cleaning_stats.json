@@ -1,1 +1,14 @@
-{"initial_rows": 429435, "final_rows": 395577, "rows_dropped": 33858, "outliers_clamped": 1086831, "features": 67}
+{
+    "initial_rows": 429435,
+    "final_rows": 429435,
+    "pruned_rows": 0,
+    "monotonicity_verified": true,
+    "monotonicity_repairs": 730289,
+    "outliers_redistributed": 0,
+    "features": 67,
+    "audit_steps": [
+        "Pruned 0 records missing critical identifiers (location/date).",
+        "Repaired 730,289 monotonicity drops in cumulative caseload/mortality vectors.",
+        "Detected and smoothed 0 reporting spikes using Median Absolute Deviation."
+    ]
+}

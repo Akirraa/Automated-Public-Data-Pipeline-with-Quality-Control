@@ -67,13 +67,18 @@ def aggregate_metrics(cleaned_path: str, output_dir: str) -> dict:
             # --- 5. Time Progression Aggregation (FULL TREND) ---
             if date_col:
                 logging.info(f"Compiling temporal trend with {date_col} index.")
-                # We sum global totals across all entities for the primary trend chart.
-                # Use strftime to normalize keys for the JSON response
                 time_df = df.dropna(subset=[date_col]).copy()
                 time_df['period_str'] = time_df[date_col].dt.strftime('%Y-%m-%d')
                 
-                # Global total trend
-                agg_time = time_df.groupby('period_str')[numerics].sum().reset_index()
+                # Intelligent aggregation map
+                agg_map = {}
+                for col in numerics:
+                    # Categorize: Rates/Intensity (Mean) vs Totals (Sum)
+                    is_rate = any(x in col.lower() for x in ['_per_', 'rate', 'positive', 'index', 'reproduction'])
+                    agg_map[col] = 'mean' if is_rate else 'sum'
+                
+                # Perform the mapped aggregation
+                agg_time = time_df.groupby('period_str').agg(agg_map).reset_index()
                 agg_time = agg_time.sort_values(by='period_str', ascending=True)
                 agg_time.rename(columns={'period_str': 'time_period'}, inplace=True)
                 

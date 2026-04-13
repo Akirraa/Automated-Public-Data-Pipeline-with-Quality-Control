@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-import { Database, UploadCloud, BarChart2, Hash, Layers, TrendingUp, Download, Terminal, CheckCircle2, AlertCircle, Link, Plus, Trash2, RefreshCw, Activity } from 'lucide-react';
+import { Database, UploadCloud, BarChart2, Hash, Layers, TrendingUp, Download, Terminal, CheckCircle2, AlertCircle, Link, Plus, Trash2, RefreshCw, Activity, FileBarChart } from 'lucide-react';
 import { BarChart, Bar, LineChart, Line, AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Legend } from 'recharts';
 import KPICard from './components/KPICard';
 import DataTable from './components/DataTable';
@@ -114,17 +114,21 @@ function App() {
 
         <div className="header-actions">
           <input type="file" style={{ display: 'none' }} ref={fileInputRef} onChange={handleFileUpload} />
-          <button onClick={() => fileInputRef.current.click()} className="upload-btn">
-             <UploadCloud size={18} /> Ingest Local
+          
+          <button onClick={() => fileInputRef.current.click()} className="upload-btn" title="Ingest Local CSV">
+             <UploadCloud size={18} /> Ingest
           </button>
           
-          <div className="download-group">
-            <button onClick={() => {
-                navigator.clipboard.writeText('http://localhost:8000/api/pbi');
-                alert('Power BI Direct Link copied!');
-            }} className="icon-btn" title="Power BI Sync"><Link size={18} /></button>
-            <a href="http://localhost:8000/api/download/csv" className="icon-btn" title="CSV"><Download size={18} /></a>
-          </div>
+          <button onClick={() => {
+              navigator.clipboard.writeText('http://localhost:8000/api/pbi');
+              alert('Power BI Direct Link copied!');
+          }} className="icon-btn" title="Power BI Sync"><Link size={18} /></button>
+          
+          <a href="http://localhost:8000/api/download/csv" className="icon-btn" title="Download Cleaned CSV"><Download size={18} /></a>
+          
+          <a href="http://localhost:8000/api/download/pdf" className="upload-btn accent" title="Download Integrity Briefing">
+             <FileBarChart size={18} /> Report
+          </a>
         </div>
       </header>
 
@@ -145,45 +149,95 @@ function App() {
             {entityData.length > 0 ? (
               <>
                 <section className="kpi-grid">
-                  {numericColumns.slice(0, 4).map((col, idx) => (
+                  {[
+                    { id: 'total_cases', label: 'Global Caseload', icon: Activity },
+                    { id: 'total_deaths', label: 'Total Mortality', icon: Hash },
+                    { id: 'people_vaccinated_per_hundred', label: 'Vaccination Coverage (%)', icon: CheckCircle2 },
+                    { id: 'hosp_patients_per_million', label: 'Hospitalization Intensity', icon: TrendingUp }
+                  ].map((kpi, idx) => (
                     <KPICard 
                        key={idx} 
-                       title={`Total ${col.replace(/_/g, ' ')}`} 
-                       value={entityData.reduce((acc, row) => acc + (row[col] || 0), 0).toLocaleString()} 
-                       icon={idx % 2 === 0 ? Activity : TrendingUp} 
+                       title={kpi.label} 
+                       value={entityData.reduce((acc, row) => acc + (row[kpi.id] || 0), 0).toLocaleString()} 
+                       icon={kpi.icon} 
                     />
                   ))}
                 </section>
 
-                <section className="bento-grid">
-                   <div className="chart-container glass-card" style={{ gridColumn: '1 / -1' }}>
-                      <h2>Temporal Progression Vectors</h2>
-                      <div className="chart-wrapper">
-                         <ResponsiveContainer width="100%" height={300}>
-                            <AreaChart data={timeData}>
-                               <defs><linearGradient id="colorMetric" x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stopColor="#38bdf8" stopOpacity={0.3}/><stop offset="95%" stopColor="#38bdf8" stopOpacity={0}/></linearGradient></defs>
-                               <CartesianGrid strokeDasharray="3 3" stroke="#ffffff10" vertical={false} />
-                               <XAxis dataKey="time_period" stroke="#64748b" tick={{fontSize: 10}} minTickGap={40} />
-                               <YAxis stroke="#64748b" tick={{fontSize: 10}} />
-                               <Tooltip contentStyle={{ backgroundColor: '#0f172a', border: '1px solid #1e293b' }} />
-                               <Area type="monotone" dataKey={numericColumns[0]} stroke="#38bdf8" fill="url(#colorMetric)" strokeWidth={2} />
-                            </AreaChart>
-                         </ResponsiveContainer>
-                      </div>
-                   </div>
+                 <section className="bento-grid">
+                    <div className="chart-container glass-card" style={{ gridColumn: 'span 2' }}>
+                       <div className="chart-header">
+                         <BarChart2 size={18} color="#38bdf8" />
+                         <h2>Historical Progression Trajectory</h2>
+                       </div>
+                       <div className="chart-wrapper">
+                          <ResponsiveContainer width="100%" height={260}>
+                             <AreaChart data={timeData}>
+                                <defs><linearGradient id="colorTotal" x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stopColor="#38bdf8" stopOpacity={0.3}/><stop offset="95%" stopColor="#38bdf8" stopOpacity={0}/></linearGradient></defs>
+                                <CartesianGrid strokeDasharray="3 3" stroke="#ffffff10" vertical={false} />
+                                <XAxis dataKey="time_period" stroke="#64748b" tick={{fontSize: 10}} minTickGap={40} />
+                                <YAxis stroke="#64748b" tick={{fontSize: 10}} />
+                                <Tooltip contentStyle={{ backgroundColor: '#0f172a', border: '1px solid #1e293b' }} />
+                                <Area type="monotone" dataKey="total_cases" name="Global Cases" stroke="#38bdf8" fill="url(#colorTotal)" strokeWidth={2} />
+                             </AreaChart>
+                          </ResponsiveContainer>
+                       </div>
+                    </div>
 
-                   <div className="chart-container glass-card">
-                      <h2>Top Contributors</h2>
-                      <div className="chart-wrapper">
-                         <ResponsiveContainer width="100%" height={350}>
-                            <BarChart data={entityData.slice(0, 10)} layout="vertical">
-                               <XAxis type="number" hide /><YAxis type="category" dataKey={labelColumn} stroke="#94a3b8" tick={{fontSize: 11}} width={100} />
-                               <Tooltip cursor={{fill: '#ffffff05'}} contentStyle={{backgroundColor: '#0f172a'}} />
-                               <Bar dataKey={numericColumns[0]} fill="#38bdf8" radius={[0, 4, 4, 0]} />
-                            </BarChart>
-                         </ResponsiveContainer>
-                      </div>
-                   </div>
+                    <div className="chart-container glass-card">
+                       <div className="chart-header">
+                         <Activity size={18} color="#fbbf24" />
+                         <h2>Burden Distribution (Top 10)</h2>
+                       </div>
+                       <div className="chart-wrapper">
+                          <ResponsiveContainer width="100%" height={260}>
+                             <BarChart data={entityData.slice(0, 10)} layout="vertical">
+                                <XAxis type="number" hide /><YAxis type="category" dataKey={labelColumn} stroke="#94a3b8" tick={{fontSize: 11}} width={100} />
+                                <Tooltip cursor={{fill: '#ffffff05'}} contentStyle={{backgroundColor: '#0f172a'}} />
+                                <Bar dataKey="total_cases" name="Total Cases" fill="#38bdf8" radius={[0, 4, 4, 0]} />
+                             </BarChart>
+                          </ResponsiveContainer>
+                       </div>
+                    </div>
+
+                    {/* New Clinical Intensity Row */}
+                    <div className="chart-container glass-card">
+                       <div className="chart-header">
+                         <CheckCircle2 size={18} color="#10b981" />
+                         <h2>Vaccination Coverage (%)</h2>
+                       </div>
+                       <div className="chart-wrapper">
+                          <ResponsiveContainer width="100%" height={220}>
+                             <AreaChart data={timeData}>
+                                <defs><linearGradient id="colorVacc" x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stopColor="#10b981" stopOpacity={0.3}/><stop offset="95%" stopColor="#10b981" stopOpacity={0}/></linearGradient></defs>
+                                <CartesianGrid strokeDasharray="3 3" stroke="#ffffff10" vertical={false} />
+                                <XAxis dataKey="time_period" stroke="#64748b" tick={{fontSize: 9}} minTickGap={50} />
+                                <YAxis stroke="#64748b" tick={{fontSize: 10}} domain={[0, 100]} />
+                                <Tooltip contentStyle={{ backgroundColor: '#0f172a', border: '1px solid #1e293b' }} />
+                                <Area type="monotone" dataKey="people_vaccinated_per_hundred" name="Coverage (%)" stroke="#10b981" fill="url(#colorVacc)" strokeWidth={2} />
+                             </AreaChart>
+                          </ResponsiveContainer>
+                       </div>
+                    </div>
+
+                    <div className="chart-container glass-card">
+                       <div className="chart-header">
+                         <TrendingUp size={18} color="#f59e0b" />
+                         <h2>Hospitalization Intensity</h2>
+                       </div>
+                       <div className="chart-wrapper">
+                          <ResponsiveContainer width="100%" height={220}>
+                             <AreaChart data={timeData}>
+                                <defs><linearGradient id="colorHosp" x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stopColor="#f59e0b" stopOpacity={0.3}/><stop offset="95%" stopColor="#f59e0b" stopOpacity={0}/></linearGradient></defs>
+                                <CartesianGrid strokeDasharray="3 3" stroke="#ffffff10" vertical={false} />
+                                <XAxis dataKey="time_period" stroke="#64748b" tick={{fontSize: 9}} minTickGap={50} />
+                                <YAxis stroke="#64748b" tick={{fontSize: 10}} />
+                                <Tooltip contentStyle={{ backgroundColor: '#0f172a', border: '1px solid #1e293b' }} />
+                                <Area type="monotone" dataKey="hosp_patients_per_million" name="Patients/Mil" stroke="#f59e0b" fill="url(#colorHosp)" strokeWidth={2} />
+                             </AreaChart>
+                          </ResponsiveContainer>
+                       </div>
+                    </div>
 
                    <div className="table-wrapper glass-card"><DataTable data={entityData} columns={columns} /></div>
 
