@@ -1,68 +1,85 @@
-# Universal Auto-ETL Analytics Platform
+# Medical Intelligence Analytics Suite
 
-This project provides an automated Extract, Transform, and Load (ETL) data pipeline coupled with a real-time responsive web dashboard. It accepts generic CSV datasets, dynamically infers schema structures, calculates multidimensional metrics, and serves the results through a FastAPI backend to a React frontend.
+Professional-grade epidemiological data ingestion, clinical auditing, and real-time visualization platform. This suite transforms raw public health data into actionable intelligence through automated integrity verification and high-fidelity reporting.
 
-## Architecture
+## 🏥 Clinical Intelligence Dashboard
 
-* Backend: Python 3.10, FastAPI, Pandas, Great Expectations.
-* Frontend: Node.js, React, Vite, Recharts, Vanilla CSS (Glassmorphism).
-* Pipeline: Automated data parsing, type-inference, cleaning, and dual-axis aggregation (Entity totals and Time-Series progression).
+### System Overview
+![Main Dashboard](./docs/screenshots/dashboard_overview.png)
+*Mission Control: Real-time trends, validated KPIs, and global progression vectors.*
 
-## Visual Overview
+### Ingest & Integrity Reporting
+![Reporting & Ingest](./docs/screenshots/dashboard_reporting.png)
+*One-click synchronization with public clinical registries and automated PDF Integrity Briefing generation.*
 
-### Main Dashboard
-![Dashboard Overview](./docs/screenshots/dashboard_overview.png)
+### Multi-Registry Management
+![Data Sources](./docs/screenshots/dashboard_sources.png)
+*Manage and synchronize multiple clinical endpoints for comparative analysis.*
 
-### Entity Analysis
-![Entity Analysis](./docs/screenshots/dashboard_entities.png)
+## 📈 Clinical Visualization Gallery
 
-### Time Series Progression
-![Time Series Analysis](./docs/screenshots/dashboard_timeseries.png)
+The Mission Control dashboard provides a multi-dimensional view of the pandemic's trajectory through high-fidelity graphics.
 
-## Local Execution
+### 1. Historical Progression Trajectory
+![Historical Progression](./docs/screenshots/chart_historical.png)
+*Visualizes the global cumulative caseload over time, audited for clinical consistency.*
+
+### 2. Burden Distribution (Top 10)
+![Burden Distribution](./docs/screenshots/chart_burden.png)
+*Identifies top-contributing regions by total volume to prioritize resource allocation.*
+
+### 3. Vaccination Coverage (%)
+![Vaccination Coverage](./docs/screenshots/chart_vaccination.png)
+*Monitors global population protection levels through normalized coverage tracking.*
+
+### 4. Hospitalization Intensity
+![Hospitalization Intensity](./docs/screenshots/chart_hospitalization.png)
+*Tracks the strain on clinical infrastructure via daily inpatient census metrics.*
+
+## 🛠️ Technology Stack
+
+- **Intelligence Engine (Python)**:
+  - **Pandas & SciPy**: Advanced statistical cleaning, Monotonicity Enforcement, and MAD-based outlier redistribution.
+  - **FastAPI**: High-performance REST API serving clinical snapshots and time-series data.
+  - **FPDF2**: Automated generation of professional clinical integrity briefings (PDF).
+- **Mission Control (React)**:
+  - **Vite & Recharts**: High-fidelity responsive visualization of progression vectors.
+  - **Lucide React**: Expressive clinical iconography.
+  - **Vanilla CSS**: Premium glassmorphism-inspired clinical interface.
+
+## 📊 KPI Dictionary & Logic
+
+| KPI Name | Clinical Meaning | Mathematical Logic |
+| :--- | :--- | :--- |
+| **Global Caseload** | Total validated infections | Cumulative Sum (Repaired for Monotonicity) |
+| **Total Mortality** | Verified clinical fatalities | Cumulative Sum (Audit-verified) |
+| **Vaccination Coverage (%)** | Population protection level | Global Mean of Normalized Coverage (%) |
+| **Hospitalization Intensity** | Clinical occupancy load | Global Mean of Patients per Million |
+
+## 🚀 Getting Started
 
 ### Prerequisites
-* Python 3.10+
-* Node.js 18+
+* Python 3.10+ & Node.js 18+
 
-### Initialization
-1. Create and activate a virtual environment in the project root:
+### Quick Launch (Windows)
+1. Initialize the environment:
+   ```powershell
    python -m venv venv
-   source venv/bin/activate  # On Windows: .\venv\Scripts\activate
-
-2. Install backend dependencies:
+   .\venv\Scripts\activate
    pip install -r requirements.txt
-
-3. Install frontend dependencies:
-   cd frontend
-   npm install
-
-### Running the Services
-To run both the backend and frontend simultaneously on Windows, execute the provided batch script:
+   cd frontend && npm install && cd ..
+   ```
+2. Start the suite:
+   ```powershell
    .\run_dashboard.bat
+   ```
 
-Alternatively, run them separately:
-* Backend: `cd api && uvicorn main:app --reload`
-* Frontend: `cd frontend && npm run dev`
+### Operational Pipeline
+Use `.\RUN_PIPELINE.bat` to execute a full data cycle:
+1. **Ingest**: Download latest data from OWID/Public sources.
+2. **Clean**: Apply Monotonicity and MAD-based redistribution.
+3. **Audit**: Execute clinical quality assurance checks.
+4. **Report**: Synchronize dashboard and generate **Integrity Briefing PDF**.
 
-Access the application via http://localhost:5173.
-
-## Docker Deployment
-
-A multi-stage Dockerfile is included to containerize and serve both the Python backend API and the compiled React frontend simultaneously.
-
-1. Build the Docker image:
-   docker build -t auto-etl-platform .
-
-2. Run the Docker container:
-   docker run -d -p 8000:8000 -p 5173:5173 --name etl-dashboard auto-etl-platform
-
-3. Access the deployed application bounds remotely via port 5173 or locally at http://localhost:5173.
-
-## Power BI Integration
-
-The platform provides a direct sync endpoint for Power BI:
-1. In Power BI Desktop, go to **Get Data** -> **Web**.
-2. Paste the following URL: `http://localhost:8000/api/pbi` (or click the Link icon in the dashboard header).
-3. Power BI will automatically detect the schema and allow you to build custom reports that update whenever the ETL pipeline runs.
-
+---
+*Developed for the Medical Intelligence Unit - Automated Data Quality Control.*
